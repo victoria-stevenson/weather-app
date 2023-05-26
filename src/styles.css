@@ -1,0 +1,75 @@
+.container {
+  padding: 10px 20px;
+  margin: 100px auto;
+  max-width: 600px;
+
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.frame {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.today-details,
+.current-time {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+  line-height: 1.2;
+}
+.current-time {
+  margin-top: 7px;
+  margin-right: 41px;
+}
+.temp-today-column {
+  text-align: right;
+  padding: 10px;
+  margin-right: 10px;
+}
+.temp-today-font {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 0.8;
+}
+.temp-units {
+  font-size: 15px;
+  margin-top: 7px;
+  position: relative;
+  top: -32px;
+}
+.search-field,
+.submit-button,
+.current-city-button {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background: white;
+}
+.search-field {
+  width: 100%;
+}
+
+.current-city-button {
+  position: relative;
+  right: -15px;
+}
+.current-city-button:hover,
+.submit-button:hover {
+  background: #f5f8fb;
+
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.weekdays {
+  padding: 10px 20px;
+  margin: 10px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.weekday-emojis {
+  font-size: 36px;
+}
