@@ -8,7 +8,7 @@ function showTemperature(response) {
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${temperature}ºC`;
   document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 
