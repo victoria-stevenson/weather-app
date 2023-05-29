@@ -1,14 +1,14 @@
 .container {
-  padding: 10px 20px;
-  margin: 100px auto;
   max-width: 600px;
-
-  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  margin: 100px auto;
 }
+
 .frame {
   border: 1px solid lightgray;
   border-radius: 6px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  padding: 10px 20px;
 }
 
 .today-details,
