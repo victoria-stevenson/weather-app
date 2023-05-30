@@ -1,7 +1,6 @@
 //Display Realtime City Weather
 
 function showTemperature(response) {
-  console.log(response.data);
   let city = (document.querySelector("#current-city").innerHTML =
     response.data.name);
   let temperature = Math.round(response.data.main.temp);
