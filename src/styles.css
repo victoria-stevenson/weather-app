@@ -19,18 +19,24 @@
   line-height: 1.2;
 }
 .current-time {
-  margin-top: 7px;
-  margin-right: 41px;
+  position: relative;
+  top: -20px;
+  right: -20px;
 }
 .temp-today-column {
   text-align: right;
   padding: 10px;
   margin-right: 10px;
 }
+
 .temp-today-font {
   font-size: 60px;
   font-weight: 500;
   line-height: 0.8;
+}
+.icon {
+  position: relative;
+  top: -18px;
 }
 .temp-units {
   font-size: 15px;
