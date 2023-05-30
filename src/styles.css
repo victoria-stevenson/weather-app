@@ -21,12 +21,11 @@
 .current-time {
   position: relative;
   top: -20px;
-  right: -20px;
+  right: 10px;
 }
 .temp-today-column {
   text-align: right;
   padding: 10px;
-  margin-right: 10px;
 }
 
 .temp-today-font {
@@ -43,6 +42,7 @@
   margin-top: 7px;
   position: relative;
   top: -32px;
+  right: -10px;
 }
 .search-field,
 .submit-button,
