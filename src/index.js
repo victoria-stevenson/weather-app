@@ -15,6 +15,9 @@ function showTemperature(response) {
     response.data.wind.speed
   );
 
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
