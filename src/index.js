@@ -7,6 +7,8 @@ function showTemperature(response) {
   let currentTemp = document.querySelector("#current-temp");
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.main.temp;
+
   currentTemp.innerHTML = `${temperature}`;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
@@ -48,20 +50,21 @@ currentTime.innerHTML = `${weekday} ${hour}:${minutes}`;
 //Change Temperature Units
 function changeToFahrenheit(event) {
   event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = "";
+  let temperatureValue = document.querySelector("current-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureValue.innerHTML = Math.round(fahrenheitTemperature);
+  alert(fahrenheitTemperature);
 }
 
 function changeToCelsius(event) {
   event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = "☀️ 20";
+  showTemperature();
 }
 
-//let celsiusLink = document.querySelector("#celsius-link");
-//celsiusLink.addEventListener("click", changeToCelsius);
-//let fahrenheitLink = document.querySelector("#fahrenheit-link");
-//fahrenheitLink.addEventListener("click", changeToFahrenheit);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeToCelsius);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 function searchCity(city) {
   let apiKey = "b8a1f8cba14c698e101692e6302ff32f";
@@ -90,10 +93,12 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocationWeather);
 }
 
-searchCity("Stockholm");
+let celsiusTemperature = null;
 
 let searchField = document.querySelector("#search");
 searchField.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-btn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+searchCity("Stockholm");
