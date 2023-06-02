@@ -50,15 +50,21 @@ currentTime.innerHTML = `${weekday} ${hour}:${minutes}`;
 //Change Temperature Units
 function changeToFahrenheit(event) {
   event.preventDefault();
-  let temperatureValue = document.querySelector("current-temp");
+
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureValue.innerHTML = Math.round(fahrenheitTemperature);
-  alert(fahrenheitTemperature);
+  let temperatureValue = (document.querySelector("#current-temp").innerHTML =
+    Math.round(fahrenheitTemperature));
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
 }
 
 function changeToCelsius(event) {
   event.preventDefault();
-  showTemperature();
+  document.querySelector("#current-temp").innerHTML = `${Math.round(
+    celsiusTemperature
+  )}`;
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 let celsiusLink = document.querySelector("#celsius-link");
