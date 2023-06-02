@@ -44,6 +44,14 @@
   top: -32px;
   right: -10px;
 }
+.active {
+  color: black;
+  text-decoration: none;
+}
+.active:hover {
+  cursor: default;
+}
+
 .search-field,
 .submit-button,
 .current-city-button {
