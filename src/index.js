@@ -1,3 +1,11 @@
+function getForecast(coordinates) {
+  let apiKey = "5293d8454b519c30f6f6331f38c85b4c";
+  let latitude = coordinates.lat;
+  let longitude = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   let city = (document.querySelector("#current-city").innerHTML =
     response.data.name);
@@ -23,6 +31,8 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
+
+  getForecast(response.data.coord);
 }
 
 function changeToFahrenheit(event) {
@@ -72,7 +82,8 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocationWeather);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Sun", "Mon", "Tue", "Wed", "Fri"];
   let forecastHTML = `<div class="row">`;
@@ -129,4 +140,3 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 searchCity("Stockholm");
-displayForecast();
