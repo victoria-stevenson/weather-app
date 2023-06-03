@@ -23,71 +23,47 @@
   <body>
     <div class="container">
       <div class="frame">
-      <div class="row">
-       <div class="col-8">
-      <form id="search">
-        
-        <input
-          type="text"
-          placeholder="Search City"
-          class="search-field"
-          id="search-input"
-        />
-        </div>
-        <div class="col-1">
-        <input type="submit" value="🔍" class="submit-button" />
-        </div>
-        <div class="col-3">
-          <button class="current-city-button" id="current-location-btn">Current City</button>
-        </div>
-      </form>
-      
-
-      <div class="row">
-        <div class="col-6 city">
-          <h1 id="current-city"></h1>
-          <p class="today-details">
-            <span class="description" id="weather-description"> </span> <br />
-            Humidity: <span id="humidity"> </span>% <br />
-            Wind: <span id="wind-speed"> </span> km/h
-          </p>
-        </div>
-        <div class="col-6 temp-today-column">
+        <div class="row">
+        <div class="col-8">
+        <form id="search">
           
-          <img src="#" alt="" class="icon" id="icon"><span class="temp-today-font" id="current-temp"></span>
-          <span class="temp-units"><a href="#" id="celsius-link" >ºC</a> | <a href="#" class="active" id="fahrenheit-link">ºF</a></span>
+          <input
+            type="text"
+            placeholder="Search City"
+            class="search-field"
+            id="search-input"
+          />
+          </div>
+          <div class="col-1">
+          <input type="submit" value="🔍" class="submit-button" />
+          </div>
+          <div class="col-3">
+            <button class="current-city-button" id="current-location-btn">Current City</button>
+          </div>
+        </form>
+        
 
-          <p class="current-time" id="date-time"></p>
+        <div class="row">
+          <div class="col-6 city">
+            <h1 id="current-city"></h1>
+            <p class="today-details">
+              <span class="description" id="weather-description"> </span> <br />
+              Humidity: <span id="humidity"> </span>% <br />
+              Wind: <span id="wind-speed"> </span> km/h
+            </p>
+          </div>
+          <div class="col-6 temp-today-column">
+            
+            <img src="#" alt="" class="icon" id="icon"><span class="temp-today-font" id="current-temp"></span>
+            <span class="temp-units"><a href="#" id="celsius-link" >ºC</a> | <a href="#" class="active" id="fahrenheit-link">ºF</a></span>
+
+            <p class="current-time" id="date-time"></p>
+          </div>
         </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col weekdays frame">
-          <strong>MON</strong>
-          <div class="weekday-emojis">🌦️</div>
-          23 ºC
-        </div>
-        <div class="col weekdays frame">
-          <strong>TUE</strong>
-          <div class="weekday-emojis">☀️</div>
-          24 ºC
-        </div>
-        <div class="col weekdays frame">
-          <strong>WED</strong>
-          <div class="weekday-emojis">🌤️</div>
-          21 ºC
-        </div>
-        <div class="col weekdays frame">
-          <strong>THU</strong>
-          <div class="weekday-emojis">⛈️</div>
-          18 ºC
-        </div>
-        <div class="col weekdays frame">
-          <strong>FRI</strong>
-          <div class="weekday-emojis">☀️</div>
-          22 ºC
-        </div>
-     </div>
+        <hr />
+          <div id="forecast">
+            
+          </div>
      </div>
      
     </div>

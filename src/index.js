@@ -72,6 +72,26 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocationWeather);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Fri"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col weekdays frame">
+          <strong>${day}</strong>
+          <div class="weekday-emojis">🌦️</div>
+          <span id="forecast-temp-max">23</span> <span id="forecast-temp-min">17</span>
+        </div>
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Display current day and time
 let now = new Date();
 let weekdays = [
@@ -109,3 +129,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 searchCity("Stockholm");
+displayForecast();
