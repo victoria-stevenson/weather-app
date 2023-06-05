@@ -36,6 +36,14 @@
 .icon {
   position: relative;
   top: -18px;
+  background: rgb(186, 206, 227);
+  background: radial-gradient(
+    circle,
+    rgba(186, 206, 227, 1) 0%,
+    rgba(229, 235, 242, 0.5032387955182073) 41%,
+    rgba(245, 246, 247, 0) 66%
+  );
+  border-radius: 30px;
 }
 .temp-units {
   font-size: 15px;
