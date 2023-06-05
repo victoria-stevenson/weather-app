@@ -102,14 +102,17 @@ function displayForecast(response) {
         forecastHTML +
         ` <div class="col weekdays frame">
           <strong>${formatForecastDays(forecastDay.dt)}</strong>
-          <div class="weekday-emojis"><img src="https://openweathermap.org/img/wn/${
+          <div class="weekday-icons">
+          <img src="https://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
-          }@2x.png" alt="" width="36px"></div>
+          }@2x.png" alt="" width="36px">
+          </div>
           <span id="forecast-temp-max">${Math.round(
             forecastDay.temp.max
-          )}º</span> <span id="forecast-temp-min">${Math.round(
-          forecastDay.temp.min
-        )}º</span>
+          )}º</span> 
+          <span id="forecast-temp-min">${Math.round(
+            forecastDay.temp.min
+          )}º</span>
         </div>
         `;
     }

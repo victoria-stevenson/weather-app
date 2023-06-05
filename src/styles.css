@@ -88,6 +88,13 @@
   line-height: 1.8;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
-.weekday-emojis {
-  font-size: 36px;
+.weekday-icons {
+  background: rgb(186, 206, 227);
+  background: radial-gradient(
+    circle,
+    rgba(186, 206, 227, 1) 0%,
+    rgba(229, 235, 242, 0.5032387955182073) 41%,
+    rgba(245, 246, 247, 0) 66%
+  );
+  border-radius: 30px;
 }
