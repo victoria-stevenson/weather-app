@@ -103,3 +103,8 @@
   );
   border-radius: 30px;
 }
+
+.forecast-min-temp {
+  color: grey;
+  margin-left: 5px;
+}
