@@ -82,21 +82,37 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocationWeather);
 }
 
+function formatForecastDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Fri"];
+  //let days = ["Sun", "Mon", "Tue", "Wed", "Fri"];
   let forecastHTML = `<div class="row">`;
+  let forecast = response.data.daily;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` <div class="col weekdays frame">
-          <strong>${day}</strong>
-          <div class="weekday-emojis">🌦️</div>
-          <span id="forecast-temp-max">23</span> <span id="forecast-temp-min">17</span>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col weekdays frame">
+          <strong>${formatForecastDays(forecastDay.dt)}</strong>
+          <div class="weekday-emojis"><img src="https://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png" alt="" width="36px"></div>
+          <span id="forecast-temp-max">${Math.round(
+            forecastDay.temp.max
+          )}º</span> <span id="forecast-temp-min">${Math.round(
+          forecastDay.temp.min
+        )}º</span>
         </div>
         `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
