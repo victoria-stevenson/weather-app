@@ -21,11 +21,9 @@
 .current-time {
   position: relative;
   top: -25px;
-  right: -13px;
 }
 .temp-today-column {
   text-align: right;
-  padding: 10px;
 }
 
 .temp-today-font {
@@ -45,12 +43,11 @@
   );
   border-radius: 30px;
 }
-.temp-units {
+.temp-unit {
   font-size: 15px;
   margin-top: 7px;
   position: relative;
   top: -32px;
-  right: -10px;
 }
 .active {
   color: black;

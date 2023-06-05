@@ -23,9 +23,6 @@ function showTemperature(response) {
     response.data.wind.speed
   );
 
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -33,25 +30,6 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", `response.data.weather[0].description`);
 
   getForecast(response.data.coord);
-}
-
-function changeToFahrenheit(event) {
-  event.preventDefault();
-
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureValue = (document.querySelector("#current-temp").innerHTML =
-    Math.round(fahrenheitTemperature));
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-}
-
-function changeToCelsius(event) {
-  event.preventDefault();
-  document.querySelector("#current-temp").innerHTML = `${Math.round(
-    celsiusTemperature
-  )}`;
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
 }
 
 function searchCity(city) {
@@ -92,7 +70,6 @@ function formatForecastDays(timestamp) {
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  //let days = ["Sun", "Mon", "Tue", "Wed", "Fri"];
   let forecastHTML = `<div class="row">`;
   let forecast = response.data.daily;
 
@@ -152,10 +129,5 @@ searchField.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-btn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", changeToCelsius);
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 searchCity("Stockholm");
